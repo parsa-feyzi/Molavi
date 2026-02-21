@@ -1,3 +1,85 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* variabels */
+:root {
+    --primary-color: #1d3d70;
+    --primary-foreground: #fdfdfe;
+    --secondary-foreground: #f0f0f1;
+}
+
+/* reset css */
+*, body, html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    display: block;
+}
+
+/* fonts */
+@font-face {
+    font-family: dana;
+    src: url(../fonts/dana\ regular.ttf);
+  }
+  
+@font-face {
+    font-family: dana-m;
+    src: url(../fonts/dana\ medium.ttf);
+  }
+
+
+/* custom css */
+.sub_menu {
+    @apply px-4 py-3 hover:text-white bg-gray-50/50 backdrop-blur-lg hover:bg-gray-600 !flex justify-between items-center relative duration-200
+}
+
+.sub_sub_menu {
+    @apply px-4 py-3 hover:text-white bg-gray-50 backdrop-blur-lg hover:bg-gray-600 !flex justify-between items-center relative
+}
+
+.menu_body {
+    @apply absolute top-9 right-0 w-36 rounded-md  shadow-md shadow-black/5 text-black opacity-0 hidden
+}
+
+.sub_menu_body {
+    @apply absolute top-0 right-36 w-36 rounded-md  shadow-md shadow-black/5 text-black opacity-0 hidden
+}
+
+.menu_container {
+    @apply py-2 cursor-pointer translate-y-0.5 relative
+}
+
+.menu_container:hover .menu_icon {
+  rotate: 180deg;
+}
+.menu_container:hover .menu_body {
+  display: block !important;
+  opacity: 100 !important;
+}
+
+.sub_menu:hover .sub_menu_body {
+  display: block !important;
+  opacity: 100 !important;
+}
+
+.menu_container:active .menu_icon {
+  rotate: 180deg;
+}
+.menu_container:active .menu_body {
+  display: block !important;
+  opacity: 100 !important;
+}
+
+.sub_menu:active .sub_menu_body {
+  display: block !important;
+  opacity: 100 !important;
+}
+
+/* buttons */
+.b-outline {
+    @apply rounded-md !flex items-center gap-2 border border-gray-300 lg:py-2.5 py-2 lg:px-3 px-2.5 cursor-pointer hover:bg-gray-100 active:scale-[0.99]
+}
