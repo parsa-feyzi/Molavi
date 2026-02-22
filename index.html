@@ -7,93 +7,292 @@
     <title>molavi project</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/dist/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body dir="rtl" class="font-[dana]">
-    <section>
-        <nav>
-            <div class="container py-4 flex justify-between items-center mx-auto px-2">
-                <div class="flex xl:gap-12 lg:gap-8 gap-6 items-center">
-                    <!-- logo -->
-                    <div>
-                        <img class="xl:h-12 lg:h-10 h-8" src="assets/images/logo.svg" />
-                    </div>
-                    <!-- searchbox -->
-                    <div class="flex items-center lg:gap-4 gap-3 bg-[--secondary-foreground] lg:py-1.5 py-1 lg:px-4 px-3 rounded-md text-gray-500">
-                        <label for="search_input" class="cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search lg:size-5 size-4"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
-                        </label>
-                        <input id="search_input" class="border-l-2 border-gray-200 placeholder:text-gray-500 placeholder:lg:text-sm placeholder:text-xs bg-[--secondary-foreground] lg:py-1.5 py-1 text-black outline-none w-[25vw] text-sm" placeholder="جستجو..." type="text">
-                        <div class="cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-icon lucide-list lg:size-5 size-4"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg>
-                        </div>
+    <!-- navbar -->
+    <nav>
+        <div class="container py-4 flex-plus mx-auto px-2">
+            <div class="flex xl:gap-12 lg:gap-8 gap-6 items-center">
+                <!-- logo -->
+                <a href="/">
+                    <img class="xl:h-12 lg:h-10 h-8" src="assets/images/logo.svg" />
+                </a>
+                <!-- searchbox -->
+                <div
+                    class="flex items-center lg:gap-4 gap-3 bg-[--secondary-foreground] lg:py-1.5 py-1 lg:px-4 px-3 rounded-md text-gray-500">
+                    <label for="search_input" class="cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-search-icon lucide-search lg:size-5 size-4">
+                            <path d="m21 21-4.34-4.34" />
+                            <circle cx="11" cy="11" r="8" />
+                        </svg>
+                    </label>
+                    <input id="search_input"
+                        class="border-l-2 border-gray-200 placeholder:text-gray-500 placeholder:lg:text-sm placeholder:text-xs bg-[--secondary-foreground] lg:py-1.5 py-1 text-black outline-none w-[25vw] text-sm"
+                        placeholder="جستجو..." type="text">
+                    <div class="cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-list-icon lucide-list lg:size-5 size-4">
+                            <path d="M3 5h.01" />
+                            <path d="M3 12h.01" />
+                            <path d="M3 19h.01" />
+                            <path d="M8 5h13" />
+                            <path d="M8 12h13" />
+                            <path d="M8 19h13" />
+                        </svg>
                     </div>
                 </div>
-                <div class="md:flex hidden lg:gap-4 gap-3">
-                    <!-- support button -->
-                    <div class="b-outline">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headset-icon lucide-headset size-4"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg>
-                        <span class="text-xs font-[dana-m]">پشتیبانی</span>
-                    </div>
-                    <!-- logout state -->
-                    <div class="b-outline">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in-icon lucide-log-in size-4 rotate-180"><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/></svg>
-                        <span class="text-xs font-[dana-m] lg:block hidden">ورود | ثبت‌نام</span>
-                    </div>
-                    <!-- login state -->
-                    <!-- <div class="b-outline">
+            </div>
+            <div class="md:flex hidden lg:gap-4 gap-3">
+                <!-- support button -->
+                <div class="b-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-headset-icon lucide-headset size-4">
+                        <path
+                            d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
+                        <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
+                    </svg>
+                    <span class="text-xs font-[dana-m]">پشتیبانی</span>
+                </div>
+                <!-- logout state -->
+                <div class="b-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-log-in-icon lucide-log-in size-4 rotate-180">
+                        <path d="m10 17 5-5-5-5" />
+                        <path d="M15 12H3" />
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                    </svg>
+                    <span class="text-xs font-[dana-m] lg:block hidden">ورود | ثبت‌نام</span>
+                </div>
+                <!-- login state -->
+                <!-- <div class="b-outline">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round size-4"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
                         <span class="text-xs font-[dana-m] lg:block hidden">پنل کاربری</span>
                     </div> -->
-                    <!-- cart button -->
-                    <div class="lg:ps-4 ps-3 border-r border-gray-200 flex items-center cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart lg:size-6 size-5"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-                    </div>
+                <!-- cart button -->
+                <div class="lg:ps-4 ps-3 border-r border-gray-200 flex items-center cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-shopping-cart-icon lucide-shopping-cart lg:size-6 size-5">
+                        <circle cx="8" cy="21" r="1" />
+                        <circle cx="19" cy="21" r="1" />
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                    </svg>
                 </div>
             </div>
-            <div class="bg-[--primary-color] text-white">
-                <div class="container px-2 lg:py-3 py-1.5 gap-12 flex items-center mx-auto lg:text-sm text-xs">
-                    <a class="menu_container">خانه</a>
-                    <!-- menu -->
-                    <div class="menu_container">
-                        <a class="!flex items-center gap-[3px]">
-                            <span>رویداد</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu_icon lucide lucide-chevron-down-icon lucide-chevron-down size-4"><path d="m6 9 6 6 6-6"/></svg>
-                        </a>
-                        <div class="menu_body">
-                            <div class="sub_menu">
-                                <a href="#" class="!flex justify-between items-center w-full">
-                                    <span>ممد</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left size-4"><path d="m15 18-6-6 6-6"/></svg>
-                                </a>
-                                <div class="sub_menu_body">
-                                    <a href="#" class="sub_sub_menu">احمد</a>
-                                    <a href="#" class="sub_sub_menu">احمد</a>
-                                    <a href="#" class="sub_sub_menu">احمد</a>
-                                </div>
-                            </div>
-                            <div class="sub_menu">
-                                <a href="#" class="!flex justify-between items-center w-full">
-                                    <span>ممد</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left size-4"><path d="m15 18-6-6 6-6"/></svg>
-                                </a>
-                                <div class="sub_menu_body">
-                                    <a href="#" class="sub_sub_menu">احمد</a>
-                                    <a href="#" class="sub_sub_menu">احمد</a>
-                                    <a href="#" class="sub_sub_menu">احمد</a>
-                                </div>
-                            </div>
-                            <div class="sub_menu">
+        </div>
+        <div class="bg-[--primary-color] text-white">
+            <div class="container px-2 flex items-center mx-auto lg:text-sm text-xs">
+                <a class="nav_item">خانه</a>
+                <a class="nav_item">آموزشی</a>
+                <!-- menu -->
+                <div class="nav_item">
+                    <a class="!flex items-center gap-[3px]">
+                        <span>رویداد</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="menu_icon lucide lucide-chevron-down-icon lucide-chevron-down size-4">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </a>
+                    <div class="menu_body">
+                        <div class="sub_menu">
+                            <a href="#" class="flex-plus w-full">
                                 <span>ممد</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4">
+                                    <path d="m15 18-6-6 6-6" />
+                                </svg>
+                            </a>
+                            <div class="sub_menu_body">
+                                <a href="#" class="sub_sub_menu">احمد</a>
+                                <a href="#" class="sub_sub_menu">احمد</a>
+                                <a href="#" class="sub_sub_menu">احمد</a>
                             </div>
                         </div>
+                        <div class="sub_menu">
+                            <a href="#" class="flex-plus w-full">
+                                <span>ممد</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-chevron-left-icon lucide-chevron-left size-4">
+                                    <path d="m15 18-6-6 6-6" />
+                                </svg>
+                            </a>
+                            <div class="sub_menu_body">
+                                <a href="#" class="sub_sub_menu">احمد</a>
+                                <a href="#" class="sub_sub_menu">احمد</a>
+                                <a href="#" class="sub_sub_menu">احمد</a>
+                            </div>
+                        </div>
+                        <div class="sub_menu">
+                            <span>ممد</span>
+                        </div>
                     </div>
-                    <a class="menu_container">خانه</a>
-                    <a class="menu_container">خانه</a>
+                </div>
+                <a class="nav_item">تماس باما</a>
+                <a class="nav_item">درباره‌ما</a>
+                <a class="nav_item">فروشگاه</a>
+                <a class="nav_item">سخنرانی</a>
+                <a class="nav_item">مقالات</a>
+                <a class="nav_item">همیاری</a>
+                <a class="nav_item">گواهینامه</a>
+                <a class="nav_item">پادکست</a>
+            </div>
+        </div>
+    </nav>
+    <!-- main section -->
+    <main class="container px-2 mx-auto">
+        <div class="swiper w-full h-[400px] mt-8 mb-56 rounded-lg">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide">
+                    <img class="w-full object-cover h-full"
+                        src="assets/images/product_images/Arkan-Andishe-Baner-Site-N-02.webp" alt="">
+                </a>
+                <a href="#" class="swiper-slide">
+                    <img class="w-full object-cover h-full"
+                        src="assets/images/product_images/Fihe-Ma-Fih-Baner-Site-copy.webp" alt="">
+                </a>
+                <a href="#" class="swiper-slide">
+                    <img class="w-full object-cover h-full"
+                        src="assets/images/product_images/Na-Baraye-sood-Baner-Site-2.webp" alt="">
+                </a>
+                <a href="#" class="swiper-slide">
+                    <img class="w-full object-cover h-full"
+                        src="assets/images/product_images/Nobatkade-SooratParasti-Baner-Site-copy.webp" alt="">
+                </a>
+                <a href="#" class="swiper-slide">
+                    <img class="w-full object-cover h-full"
+                        src="assets/images/product_images/Solooke-Ghoran-Baner-Site-copy.webp" alt="">
+                </a>
+            </div>
+            <!-- Optional controls -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-[--secondary-foreground] overflow-hidden relative pt-14 pb-10 px-2">
+        <div class="rounded-full size-[10000px] absolute -top-[9965px] left-1/2 -translate-x-1/2 bg-[--primary-color]">
+        </div>
+        <div class="container mx-auto">
+            <div class="flex-plus">
+                <a href="/">
+                    <img class="xl:h-14 lg:h-10 h-8" src="assets/images/logo.svg" />
+                </a>
+                <div class="flex gap-5">
+                    <a href="#" class="media_link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-instagram-icon lucide-instagram size-6">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="#" class="media_link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-twitter-icon lucide-twitter size-6">
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="media_link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-linkedin-icon lucide-linkedin size-6">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect width="4" height="12" x="2" y="9" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
                 </div>
             </div>
-        </nav>
-    </section>
+            <div class="py-9 flex sm:text-base text-sm flex-wrap gap-x-6 gap-y-10 mt-4 justify-between">
+                <div class="-translate-x-2 max-w-[25rem] text-sm leading-7">شروع هرچیزی سخته، ولی وقتی مسیر درستی رو
+                    انتخاب کنی،با خیال راحت و بدون استرس میتونی از مسیر لذت ببری. ما در بــی‌لـرن، توی سفر به
+                    دنیای برنامه نویسی کنارت هستیم تا باهم رشد کنیم و از نتیجه زحمات مون لذت ببریم.
+                </div>
+                <div class="flex gap-24 text-center">
+                    <div>
+                        <div class="sm:text-lg pb-3 font-bold text-d-neut-seco dark:text-neut-prim">دسترسی سریع</div>
+                        <div class="-translate-x-2 flex flex-col text-right gap-2.5 text-[15px]">
+                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">فروشگاه</a>
+                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">آموزشی</a>
+                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">رویداد</a>
+                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">سخنرانی</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="sm:text-lg pb-3 font-bold text-d-neut-seco dark:text-neut-prim">ارتباط با ما</div>
+                        <div class="-translate-x-2 flex flex-col text-right gap-2.5 text-[15px]">
+                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">درباره‌ما</a>
+                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">تماس باما</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/" class="sm:mx-0 flex items-end mx-auto">
+                    <img class="w-44" src="./assets/images/enamad-logo.png">
+                </a>
+            </div>
+            <div class="text-sm border-t-2 border-gray-500/20 pt-8 flex-plus">
+                <span class="flex gap-1 text-black/70">
+                    <span class="text-xs">کلیه حقوق مادی و معنوی متعلق به موسسه سروش مولانا می‌باشد و هرگونه استفاده نیاز به کسب مجوز
+                        کتبی خواهد داشت</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-copyright-icon lucide-copyright size-4">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M14.83 14.83a4 4 0 1 1 0-5.66" />
+                    </svg>
+                </span>
+                <span class="flex gap-1">طراحی شده توسط <a href="https://daka.website/" target="_blank" class="font-bold text-green-500">داکا</a></span>
+            </div>
+        </div>
+    </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log("hello mmd");
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 1,
+            breakpoints: {
+                768: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 1,
+                },
+            },
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            autoplay: {
+                delay: 5000,
+            },
+        });
+    });
+</script>
 
 </html>
