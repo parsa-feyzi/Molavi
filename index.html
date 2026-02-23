@@ -10,10 +10,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-<body dir="rtl" class="font-[dana]">
+<body dir="rtl" class="font-[dana] relative bg-[--primary-foreground]">
     <!-- navbar -->
-    <nav>
-        <div class="container py-4 flex-plus mx-auto px-2">
+    <nav class="md:static md:border-none border-b border-black/10 fixed top-0 left-0 right-0 z-30 bg-white">
+        <div class="container bg-[--primary-foreground] md:py-4 py-3 flex-plus mx-auto md:px-2 px-3">
+            <!-- haberger menu -->
+            <label for="menu_toggle_checkbox" class="md:hidden block">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-text-align-justify-icon lucide-text-align-justify size-[22px]">
+                    <path d="M3 5h18" />
+                    <path d="M3 12h18" />
+                    <path d="M3 19h18" />
+                </svg>
+            </label>
+            <input type="checkbox" id="menu_toggle_checkbox" hidden>
             <div class="flex xl:gap-12 lg:gap-8 gap-6 items-center">
                 <!-- logo -->
                 <a href="/">
@@ -21,7 +32,7 @@
                 </a>
                 <!-- searchbox -->
                 <div
-                    class="flex items-center lg:gap-4 gap-3 bg-[--secondary-foreground] lg:py-1.5 py-1 lg:px-4 px-3 rounded-md text-gray-500">
+                    class="md:flex hidden items-center lg:gap-4 gap-3 bg-[--secondary-foreground] lg:py-1.5 py-1 lg:px-4 px-3 rounded-md text-gray-500">
                     <label for="search_input" class="cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -47,39 +58,45 @@
                     </div>
                 </div>
             </div>
-            <div class="md:flex hidden lg:gap-4 gap-3">
-                <!-- support button -->
-                <div class="b-outline">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-headset-icon lucide-headset size-4">
-                        <path
-                            d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
-                        <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
-                    </svg>
-                    <span class="text-xs font-[dana-m]">پشتیبانی</span>
+            <div class="flex lg:gap-4 gap-3 items-center">
+                <div class="md:flex hidden lg:gap-4 gap-3 items-center">
+                    <!-- support button -->
+                    <div class="b-outline">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-headset-icon lucide-headset size-4">
+                            <path
+                                d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
+                            <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
+                        </svg>
+                        <span class="text-xs font-[dana-m]">پشتیبانی</span>
+                    </div>
+                    <!-- logout state -->
+                    <div class="b-outline">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-log-in-icon lucide-log-in size-4 rotate-180">
+                            <path d="m10 17 5-5-5-5" />
+                            <path d="M15 12H3" />
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                        </svg>
+                        <span class="text-xs font-[dana-m] lg:block hidden">ورود | ثبت‌نام</span>
+                    </div>
+                    <!-- login state -->
+                    <!-- <div class="b-outline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round size-4"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+                            <span class="text-xs font-[dana-m] lg:block hidden">پنل کاربری</span>
+                        </div> -->
                 </div>
-                <!-- logout state -->
-                <div class="b-outline">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-log-in-icon lucide-log-in size-4 rotate-180">
-                        <path d="m10 17 5-5-5-5" />
-                        <path d="M15 12H3" />
-                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-                    </svg>
-                    <span class="text-xs font-[dana-m] lg:block hidden">ورود | ثبت‌نام</span>
-                </div>
-                <!-- login state -->
-                <!-- <div class="b-outline">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round size-4"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-                        <span class="text-xs font-[dana-m] lg:block hidden">پنل کاربری</span>
-                    </div> -->
                 <!-- cart button -->
-                <div class="lg:ps-4 ps-3 border-r border-gray-200 flex items-center cursor-pointer">
+                <div class="relative lg:ps-4 ps-3 md:border-r md:border-gray-200 flex items-center cursor-pointer">
+                    <span
+                        class="lg:text-[10px] text-[8px] absolute lg:-translate-y-1 top-0 right-2 text-white bg-amber-500 rounded-[3px] grid place-content-center">
+                        <span class="lg:px-[6px] px-[4px] lg:pt-[1px] lg:translate-y-[1px] translate-y-[1px]">2</span>
+                    </span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-shopping-cart-icon lucide-shopping-cart lg:size-6 size-5">
+                        class="lucide lucide-shopping-cart-icon lucide-shopping-cart lg:size-6 size-[22px]">
                         <circle cx="8" cy="21" r="1" />
                         <circle cx="19" cy="21" r="1" />
                         <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
@@ -87,8 +104,8 @@
                 </div>
             </div>
         </div>
-        <div class="bg-[--primary-color] text-white">
-            <div class="container px-2 flex items-center mx-auto lg:text-sm text-xs">
+        <div class="bg-[--primary-color] md:block hidden text-white">
+            <div class="container px-2 flex items-center mx-auto">
                 <a class="nav_item">خانه</a>
                 <a class="nav_item">آموزشی</a>
                 <!-- menu -->
@@ -150,8 +167,110 @@
             </div>
         </div>
     </nav>
+    <!-- sidebar -->
+    <section id="sidebar"
+        class="md:hidden block w-[280px] duration-300 translate-x-[280px] h-screen bg-[--primary-foreground] border-l fixed top-0 right-0 z-50">
+        <!-- menu header -->
+        <div class="mx-4 border-b border-black/10 mb-4">
+            <!-- login state -->
+            <div class="flex-plus">
+                <div class="flex items-center gap-3 py-3">
+                    <div class="size-10 rounded-full bg-gradient-to-br from-[--primary-color] to-orange-400/50"></div>
+                    <div>
+                        <div class="font-[dana-m] mb-0.5">احمد حسینی</div>
+                        <div class="text-xs text-black/70">09120880891</div>
+                    </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-log-out-icon lucide-log-out size-5 text-red-700">
+                    <path d="m16 17 5-5-5-5" />
+                    <path d="M21 12H9" />
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                </svg>
+            </div>
+            <!-- logout state -->
+            <!-- <a href="#" class="text-center w-full py-4 text-[--primary-color] font-[dana-m]">ورود | ثبت‌نام</a> -->
+        </div>
+        <!-- menu serachbox -->
+        <div class="px-4">
+            <div
+                class="flex border border-black/10 items-center lg:gap-4 gap-3 bg-[--secondary-foreground] lg:py-1.5 py-1 lg:px-4 px-3 rounded-md text-gray-500">
+                <label for="search_input" class="cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search-icon lucide-search lg:size-5 size-4">
+                        <path d="m21 21-4.34-4.34" />
+                        <circle cx="11" cy="11" r="8" />
+                    </svg>
+                </label>
+                <input id="search_input"
+                    class="border-l-2 w-full border-gray-200 placeholder:text-gray-500 placeholder:lg:text-sm placeholder:text-xs bg-[--secondary-foreground] lg:py-1.5 py-1 text-black outline-none  text-sm"
+                    placeholder="جستجو..." type="text">
+                <div class="cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-list-icon lucide-list lg:size-5 size-4">
+                        <path d="M3 5h.01" />
+                        <path d="M3 12h.01" />
+                        <path d="M3 19h.01" />
+                        <path d="M8 5h13" />
+                        <path d="M8 12h13" />
+                        <path d="M8 19h13" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- menu links -->
+        <div class="mt-4 overflow-y-auto max-h-[calc(100vh-205px)]">
+            <a href="#" class="text-sm py-4 px-5 flex-plus bg-black/[0.02]">خانه</a>
+            <a href="#" class="text-sm py-4 px-5 flex-plus">آموزشی</a>
+            <a href="#" class="text-sm py-4 px-5 flex-plus">
+                <span>رویداد</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down size-4">
+                    <path d="m6 9 6 6 6-6" />
+                </svg>
+            </a>
+            <a href="#" class="text-sm py-4 px-5 flex-plus">تماس باما</a>
+            <a href="#" class="text-sm py-4 px-5 flex-plus">درباره‌ما</a>
+            <a href="#" class="text-sm py-4 px-5 flex-plus">فروشگاه</a>
+            <a href="#" class="text-sm py-4 px-5 flex-plus">سخنرانی</a>
+            <a href="#" class="text-sm py-4 px-5 flex-plus">مفالات</a>
+            <a href="#" class="text-sm py-4 px-5 flex-plus">همیاری</a>
+            <a href="#" class="text-sm py-4 px-5 flex-plus">گواهینامه</a>
+            <a href="#" class="text-sm py-4 px-5 flex-plus">پادکست</a>
+        </div>
+        <!-- menu footer -->
+        <div class="flex py-3 border-t border-black/10 gap-3 px-4 absolute bottom-0 left-0 w-full">
+            <!-- support button -->
+            <div class="b-outline !py-2.5 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-headset-icon lucide-headset size-4">
+                    <path
+                        d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
+                    <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
+                </svg>
+                <span class="text-sm font-[dana-m]">پشتیبانی</span>
+            </div>
+            <!-- user panel -->
+            <!-- ___only active in login state___ -->
+            <div class="b-outline !py-2.5 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-user-round-icon lucide-user-round size-4">
+                    <circle cx="12" cy="8" r="5" />
+                    <path d="M20 21a8 8 0 0 0-16 0" />
+                </svg>
+                <span class="text-sm font-[dana-m]">پنل کاربری</span>
+            </div>
+        </div>
+    </section>
     <!-- main section -->
-    <main class="container px-2 mx-auto">
+    <main class="container md:mt-0 sm:mt-20 mt-[72px] md:px-2 px-3 mx-auto">
+        <!-- slider -->
         <div class="swiper w-full h-[400px] mt-8 mb-56 rounded-lg">
             <div class="swiper-wrapper">
                 <a href="#" class="swiper-slide">
@@ -175,26 +294,27 @@
                         src="assets/images/product_images/Solooke-Ghoran-Baner-Site-copy.webp" alt="">
                 </a>
             </div>
-            <!-- Optional controls -->
+            <!-- controls -->
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
     </main>
     <!-- footer -->
-    <footer class="bg-[--secondary-foreground] overflow-hidden relative pt-14 pb-10 px-2">
-        <div class="rounded-full size-[10000px] absolute -top-[9965px] left-1/2 -translate-x-1/2 bg-[--primary-color]">
+    <footer class="bg-[--secondary-foreground] overflow-hidden relative sm:pt-14 pt-12 sm:pb-10 pb-8 md:px-2 px-3">
+        <div
+            class="sm:block hidden rounded-full size-[10000px] absolute -top-[9965px] left-1/2 -translate-x-1/2 bg-[--primary-color]">
         </div>
         <div class="container mx-auto">
-            <div class="flex-plus">
+            <div class="flex-plus sm:flex-row flex-col justify-center items-center gap-14 w-full">
                 <a href="/">
-                    <img class="xl:h-14 lg:h-10 h-8" src="assets/images/logo.svg" />
+                    <img class="lg:h-14 sm:h-12 h-14" src="assets/images/logo.svg" />
                 </a>
-                <div class="flex gap-5">
+                <div class="flex lg:gap-5 sm:gap-4 gap-8">
                     <a href="#" class="media_link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-instagram-icon lucide-instagram size-6">
+                            class="lucide lucide-instagram-icon lucide-instagram lg:size-6 sm:size-5 size-[26px]">
                             <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
@@ -203,7 +323,7 @@
                     <a href="#" class="media_link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-twitter-icon lucide-twitter size-6">
+                            class="lucide lucide-twitter-icon lucide-twitter lg:size-6 sm:size-5 size-[26px]">
                             <path
                                 d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                         </svg>
@@ -211,7 +331,7 @@
                     <a href="#" class="media_link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-linkedin-icon lucide-linkedin size-6">
+                            class="lucide lucide-linkedin-icon lucide-linkedin lg:size-6 sm:size-5 size-[26px]">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                             <rect width="4" height="12" x="2" y="9" />
                             <circle cx="4" cy="4" r="2" />
@@ -219,53 +339,55 @@
                     </a>
                 </div>
             </div>
-            <div class="py-9 flex sm:text-base text-sm flex-wrap gap-x-6 gap-y-10 mt-4 justify-between">
-                <div class="-translate-x-2 max-w-[25rem] text-sm leading-7">شروع هرچیزی سخته، ولی وقتی مسیر درستی رو
+            <div
+                class="py-9 flex sm:text-base text-sm flex-wrap gap-x-6 gap-y-10 sm:mt-4 sm:justify-between justify-center">
+                <div class="-translate-x-2 sm:text-right text-center sm:px-0 px-4 max-w-[25rem] text-sm leading-7">شروع
+                    هرچیزی سخته، ولی وقتی مسیر درستی رو
                     انتخاب کنی،با خیال راحت و بدون استرس میتونی از مسیر لذت ببری. ما در بــی‌لـرن، توی سفر به
                     دنیای برنامه نویسی کنارت هستیم تا باهم رشد کنیم و از نتیجه زحمات مون لذت ببریم.
                 </div>
                 <div class="flex gap-24 text-center">
                     <div>
                         <div class="sm:text-lg pb-3 font-bold text-d-neut-seco dark:text-neut-prim">دسترسی سریع</div>
-                        <div class="-translate-x-2 flex flex-col text-right gap-2.5 text-[15px]">
-                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">فروشگاه</a>
-                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">آموزشی</a>
-                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">رویداد</a>
-                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">سخنرانی</a>
+                        <div class="sm:-translate-x-2 flex flex-col text-right gap-2.5 text-[15px]">
+                            <a class="footer_menu_item" href="#" data-discover="true">فروشگاه</a>
+                            <a class="footer_menu_item" href="#" data-discover="true">آموزشی</a>
+                            <a class="footer_menu_item" href="#" data-discover="true">رویداد</a>
+                            <a class="footer_menu_item" href="#" data-discover="true">سخنرانی</a>
                         </div>
                     </div>
                     <div>
                         <div class="sm:text-lg pb-3 font-bold text-d-neut-seco dark:text-neut-prim">ارتباط با ما</div>
-                        <div class="-translate-x-2 flex flex-col text-right gap-2.5 text-[15px]">
-                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">درباره‌ما</a>
-                            <a class="hover:-translate-x-2 duration-300" href="#" data-discover="true">تماس باما</a>
+                        <div class="sm:-translate-x-2 flex flex-col text-right gap-2.5 text-[15px]">
+                            <a class="footer_menu_item" href="#" data-discover="true">درباره‌ما</a>
+                            <a class="footer_menu_item" href="#" data-discover="true">تماس باما</a>
                         </div>
                     </div>
                 </div>
                 <a href="/" class="sm:mx-0 flex items-end mx-auto">
-                    <img class="w-44" src="./assets/images/enamad-logo.png">
+                    <img class="md:w-44 w-36" src="./assets/images/enamad-logo.png">
                 </a>
             </div>
-            <div class="text-sm border-t-2 border-gray-500/20 pt-8 flex-plus">
-                <span class="flex gap-1 text-black/70">
-                    <span class="text-xs">کلیه حقوق مادی و معنوی متعلق به موسسه سروش مولانا می‌باشد و هرگونه استفاده نیاز به کسب مجوز
-                        کتبی خواهد داشت</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-copyright-icon lucide-copyright size-4">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M14.83 14.83a4 4 0 1 1 0-5.66" />
-                    </svg>
+            <div class="text-sm border-t-2 border-gray-500/20 pt-8 flex-plus lg:!flex-row !flex-col gap-6">
+                <span class="text-xs text-black/70">
+                    کلیه حقوق مادی و معنوی متعلق به موسسه سروش مولانا می‌باشد و هرگونه استفاده نیاز به کسب مجوز کتبی
+                    خواهد داشت ©
                 </span>
-                <span class="flex gap-1">طراحی شده توسط <a href="https://daka.website/" target="_blank" class="font-bold text-green-500">داکا</a></span>
+                <span class="flex gap-1">
+                    طراحی شده توسط <a href="https://daka.website/" target="_blank"
+                        class="font-bold text-green-500">داکا</a>
+                </span>
             </div>
         </div>
     </footer>
+    <!-- menu cover -->
+    <label id="menu_cover" for="menu_toggle_checkbox"
+        class="md:hidden bg-black/40 duration-200 w-screen h-screen fixed top-0 left-0 z-40 hidden"></label>
 </body>
+<script src="assets/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        console.log("hello mmd");
         const swiper = new Swiper('.swiper', {
             loop: true,
             slidesPerView: 1,

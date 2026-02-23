@@ -6,7 +6,7 @@
 :root {
   --primary-color: #1d3d70;
   --primary-foreground: #fdfdfe;
-  --secondary-foreground: #f0f0f1;
+  --secondary-foreground: #f2f2f3;
 }
 
 /* __fonts__ */
@@ -35,7 +35,7 @@ a {
 
 /* __buttons__ */
 .b-outline {
-  @apply rounded-md !flex items-center gap-2 border border-gray-300 lg:py-2.5 py-2 lg:px-3 px-2.5 cursor-pointer hover:bg-gray-100 active:scale-[0.99];
+  @apply rounded-md flex justify-center items-center gap-2 border border-gray-300 lg:py-2.5 py-2 lg:px-3 px-2.5 cursor-pointer hover:bg-gray-100 active:scale-[0.99];
 }
 
 /* __custom css__ */
@@ -45,13 +45,19 @@ a {
 }
 /* media link */
 .media_link {
-  @apply size-12 grid place-content-center rounded-xl bg-[--primary-color] hover:scale-110 shadow-lg hover:-translate-y-1 duration-200 text-white;
+  @apply lg:size-12 sm:size-11 size-14 grid place-content-center rounded-xl bg-[--primary-color] hover:scale-110 shadow-lg hover:-translate-y-1 duration-200 text-white;
 }
 /* slider */
 .swiper-button-next, .swiper-button-prev {
-  color: #fdfdfe !important;
-  width: 12px;
+  @apply !text-[--primary-foreground] bg-black/15 backdrop-blur-2xl px-4 md:after:scale-[0.6] after:scale-[0.4]
 }
+.swiper-button-next {
+  @apply -translate-x-[10px] rounded-r-lg ps-[18px]
+}
+.swiper-button-prev {
+  @apply translate-x-[10px] rounded-l-lg pe-[18px]
+}
+
 .swiper-pagination-bullet-active  {
   background-color: #fff !important;
 }
@@ -65,7 +71,7 @@ a {
 }
 
 .menu_body {
-  @apply absolute top-[60px] right-0 w-36 rounded-md  shadow-md shadow-black/5 text-black opacity-0 hidden;
+  @apply absolute lg:top-[60px] top-[45px]  right-0 w-36 rounded-md  shadow-md shadow-black/5 text-black opacity-0 hidden;
 }
 
 .sub_menu_body {
@@ -73,7 +79,7 @@ a {
 }
 
 .nav_item {
-  @apply hover:bg-white/5 px-6 lg:py-5 py-3.5 cursor-pointer relative z-10;
+  @apply hover:bg-white/5 xl:px-6 lg:px-5 px-4 lg:py-5 py-3.5 xl:text-sm lg:text-[12px] text-[10px] cursor-pointer relative z-10;
 }
 
 .nav_item:hover .menu_icon {
@@ -100,4 +106,8 @@ a {
 .sub_menu:active .sub_menu_body {
   display: block !important;
   opacity: 100 !important;
+}
+/* footer menu item */
+.footer_menu_item {
+  @apply hover:-translate-x-2 duration-300 sm:text-right text-center
 }
